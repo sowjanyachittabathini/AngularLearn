@@ -1,0 +1,46 @@
+.container{
+    width: 100%;
+    background: #b2c3b3;
+}
+section.loginForm {
+    width: 35%;
+    margin:10% auto;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+}
+.heading{
+    font-size: 30px;
+}
+.login-container{
+    width: 100%;
+}
+label {
+    clear: left;
+    text-align: right;
+    padding-right: 20px;
+    width: 180px;
+    font-size: 18px;
+}
+input#username {
+    padding: 6px 10px;
+    outline: none;
+    font-size:13px;
+}
+#password{
+    padding: 6px 10px;
+    outline: none;
+    font-size: 13px;
+}
+.form-group {
+    padding: 15px;
+}
+.submitBtn
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}

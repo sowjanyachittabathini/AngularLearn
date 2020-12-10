@@ -1,0 +1,99 @@
+.appointment{
+    width: 100%;
+}
+.appointHeading{
+    text-align: center;
+    font-size: 20px;
+}
+.mainForm{
+    width: 100%;
+    padding: 2% 0;
+}
+.form-content:after{
+    display: table;
+    clear: both;
+    content: "";
+}
+.left-content{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.right-content {
+    width: 50%;
+    float: left;
+}
+.buttonClass{
+    text-align: center;
+    padding: 4% 0;
+}
+.left-content .form-group {
+    padding: 18px 0;
+}
+.fname,.lname {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    font-size: 16px;
+}
+.date{
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    font-size: 16px;
+}
+.time{
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    font-size: 16px;
+}
+input#firstName {
+    font-size: 15px;
+    padding: 5px 2px;
+    border: 1px solid #e0e0d7;
+    border-radius: 4px;
+}
+input#lastName {
+    font-size: 15px;
+    padding: 5px 2px;
+    border: 1px solid #e0e0d7;
+    border-radius: 4px;
+}
+.buttonsGroup:after{
+    display: table;
+    clear: both;
+    content: "";
+}
+.radioBtn{
+    float: left;
+}
+.info{
+    margin: 0;
+}
+.namesDiv{
+    float: left;
+    padding-left: 15px;
+}
+.content-radio{
+    float: left;
+    width: 50%;
+}
+.createBtn{
+    padding: 13px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+.contactDetails {
+    width: 53%;
+    margin: auto;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    padding: 10px 33px;
+}

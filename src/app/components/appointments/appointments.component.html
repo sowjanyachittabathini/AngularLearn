@@ -1,0 +1,65 @@
+<section class="appointment">
+    <h1 class="appointHeading">Appointment Form</h1>
+    <form #appointmentForm="ngForm" class="mainForm" novalidate (ngSubmit)="createAppointment(appointmentForm)">
+        <div class="form-content">
+            <div class="left-content">
+                <div class="form-group">
+                    <label class="fname">First Name: </label>
+                    <input type="text"id="firstName" name="firstName" [(ngModel)]="client.firstName" required #firstName="ngModel" />
+                </div>
+                <div class="form-group">
+                    <label class="lname">Last Name: </label>
+                    <input type="text"id="lastName" name="lastName" [(ngModel)]="client.lastName" required #lastName="ngModel" />
+                </div>
+                <div class="form-group">
+                    <label class="date">Date of Birth: </label>
+                    <p-calendar name="dateofBirth" (onSelect)="onSelectDateofBirth(client.dateofBirth)" [(ngModel)]="client.dateofBirth" #dateofBirth="ngModel"
+                        required></p-calendar>
+                </div>
+                <div class="form-group">
+                    <label class="time">Start Time: </label>
+                    <p-calendar showTime="showTime" hourFormat="12" name="startTime" [(ngModel)]="client.startTime" #startTime="ngModel" required></p-calendar>
+                </div>
+                <div class="form-group">
+                    <label class="time">End Time: </label>
+                    <p-calendar showTime="showTime" [minDate]="client.startTime" hourFormat="12" name="endTime" [(ngModel)]="client.endTime" #endTime="ngModel" required></p-calendar>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="form-group content-radio" *ngFor="let staff of staffData">
+                    <div class="buttonsGroup" *ngIf="checkForStaffSpeciality(staff)">
+                        <input type="radio" name="doctor" class="radioBtn" ngModel [value]="staff.staffId" required required #staffControl="ngModel" />
+                        <div class="namesDiv">
+                            <p class="info">{{staff.firstName}} &nbsp; {{staff.lastName}}</p>
+                            <p> {{staff.speciality}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group buttonClass">
+            <button class="createBtn" type="submit">Create Appointment</button>
+        </div>
+    </form>
+
+
+    <div class="contactDetails" *ngIf="appointmentConfirmation.serviceLine.length > 0">
+        <h3>client details:-</h3>
+        <p>
+            <label>client Name</label> <span>{{appointmentConfirmation.client['firstName']}} &nbsp; {{appointmentConfirmation.client['lastName']}}</span>
+        </p>
+        <p><label>Age</label> {{appointmentConfirmation.client['dateofBirth']}}</p>
+        <h3>Staff details:- </h3>
+        <p>
+            <label>Staff Name</label> <span>{{appointmentConfirmation.staff['firstName']}} &nbsp; {{appointmentConfirmation.staff['lastName']}}</span>
+        </p>
+        <p>
+            <label>speciality</label> <span>{{appointmentConfirmation.staff['speciality']}} </span>
+        </p>
+        <h3> Service details </h3>
+        <p *ngFor="let service of appointmentConfirmation.serviceLine">
+            <label>Start Time:- </label><span>{{service.startTime}}</span><br>
+            <label>End Time:- </label><span>{{service.endTime}}</span>
+        </p>
+    </div>
+</section>
